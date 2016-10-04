@@ -19,7 +19,7 @@ $dataProvider = new MultiDataProvider([
 
 ```php
 $dataProvider = new MultiDataProvider([
-    'dataProviders' => $dataProviders,
+    'dataProviders' => [$data1,$data2],
     'modelCallback' => function ($model) {
         return new YourModel(['data' => $model]);
     },
