@@ -1,0 +1,32 @@
+{
+    "name": "karataserkan/yii2-multi-dataprovider",
+    "description": "Generates multiple dataprovider result",
+    "keywords": ["dataprovider", "yii2"],
+    "homepage": "https://github.com/karataserkan/yii2-multi-dataprovider",
+    "type": "yii2-extension",
+    "license": "GNU",
+    "authors": [
+        {
+            "name": "Erkan Karataş",
+            "email": "ekaratasweb@gmail.com",
+            "homepage": "https://github.com/karataserkan/yii2-multi-dataprovider",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "ekaratasweb@gmail.com",
+        "source": "https://github.com/karataserkan/yii2-multi-dataprovider"
+    },
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "karataserkan\\yii2MultiDataProvider\\": ""
+        }
+    },
+    "extra": {
+    
+    }
+}
