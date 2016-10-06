@@ -4,10 +4,56 @@ namespace karataserkan\yii2MultiDataProvider;
 
 use yii\data\ArrayDataProvider;
 
-class MultiDataProvider extends ArrayDataProvider
+class MultiDataProvider extends ArrayDataProvider implements \Iterator
 {
     public $dataProviders = [];
     public $modelCallback = false;
+    private $page = 0;
+
+    public function rewind()
+    {
+        $this->page = 0;
+    }
+
+    public function current()
+    {
+        ob_start();
+        if (!$this->allModels) {
+            $this->updatePagination();
+        }
+        $all = $this->allModels;
+        $this->allModels = [];
+
+        return $all;
+    }
+
+    public function key()
+    {
+        return $this->page;
+    }
+
+    public function updatePagination()
+    {
+        $pagination = $this->getPagination();
+        $pagination->setPage($this->page);
+        $this->setPagination($pagination);
+        $this->prepareDataProviders();
+    }
+
+    public function next()
+    {
+        ++$this->page;
+        $this->updatePagination();
+
+        return $this->page;
+    }
+
+    public function valid()
+    {
+        $pagination = $this->getPagination();
+
+        return $this->page <= $pagination->getPageCount();
+    }
 
     protected function prepareDataProviders()
     {
@@ -69,12 +115,12 @@ class MultiDataProvider extends ArrayDataProvider
         } else {
             $this->allModels = $models;
         }
-
     }
 
     protected function prepareModels()
     {
         $this->prepareDataProviders();
+
         return $this->allModels;
     }
 
