@@ -2,6 +2,7 @@
 # yii2 Multi DataProvider
 gets data from multiple dataproviders
 
+[![Latest Stable Version](http://poser.pugx.org/karataserkan/yii2-multi-dataprovider/v)](https://packagist.org/packages/karataserkan/yii2-multi-dataprovider) [![Total Downloads](http://poser.pugx.org/karataserkan/yii2-multi-dataprovider/downloads)](https://packagist.org/packages/karataserkan/yii2-multi-dataprovider) [![Monthly Downloads](http://poser.pugx.org/karataserkan/yii2-multi-dataprovider/d/monthly)](https://packagist.org/packages/karataserkan/yii2-multi-dataprovider) [![License](http://poser.pugx.org/karataserkan/yii2-multi-dataprovider/license)](https://packagist.org/packages/karataserkan/yii2-multi-dataprovider)
 
 ## Installation
 
